@@ -19,15 +19,15 @@
     
     <!-- backend se jo data aayega vo locals me rahega -->
     <% if (locals.id) { %>
-     <p>URL Generated: http://localhost:8001/<%= id %> </p>
+     <p>URL Generated: https://localhost:8001/url/<%= id %> </p>
     <% } %>
 
     <div>
         <form method="POST" action="/url">
             <label>Enter your original URL</label>
             <input type="text" name="url" placeholder="https://example.com" />
+            <button type="submit">Generate</button>
         </form>
-        <button type="submit">Generate</button>
     </div>
 
     <div>
@@ -45,7 +45,7 @@
                     <tr>
                         <td><%= index + 1 %></td>
                         <td><%= url.shortId%></td>
-                        <td><%= url.redirectUrl%></td>
+                        <td><%= url.redirectURL%></td>
                         <td><%= url.visitHistory.length%></td>
                     </tr>
                 <% }) %>
